@@ -82,6 +82,12 @@
       object-fit: cover;
       display: block;
     }
+    .hero img:before {
+      content: "Image not found";
+      color: red;
+      display: block;
+      text-align: center;
+    }
     .hero .overlay {
       position: absolute;
       top: 0;
@@ -133,6 +139,12 @@
       margin-bottom: 15px;
       display: block;
     }
+    .card img:before {
+      content: "Image not found";
+      color: red;
+      display: block;
+      text-align: center;
+    }
     footer {
       background: rgba(255,255,255,0.7);
       padding: 20px;
@@ -161,7 +173,7 @@
 
   <main>
     <section class="hero">
-      <img src="images/Flux_Dev_Candle_Licking_Goode_sells_foodlike_bakery_candles_1.jpg" alt="Candle Licking Goode Main">
+      <img src="images/Flux_Dev_Candle_Licking_Goode_sells_foodlike_bakery_candles_1.jpg" alt="Candle Licking Goode Main" onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x600?text=Hero+Image+Missing';">
       <div class="overlay">
         <h2>Welcome to Candle Licking Goode</h2>
         <p>Handmade bakery-inspired candles you can’t resist</p>
@@ -171,17 +183,17 @@
 
     <section class="grid-section">
       <div class="card">
-        <img src="images/Flux_Dev_Candle_Licking_Goode_sells_foodlike_bakery_candles_0.jpg" alt="Cupcake Candle">
+        <img src="images/Flux_Dev_Candle_Licking_Goode_sells_foodlike_bakery_candles_0.jpg" alt="Cupcake Candle" onerror="this.onerror=null; this.src='https://via.placeholder.com/300?text=Image+Missing';">
         <h3>Cupcake Delight</h3>
         <p>Sweet bakery-style candle with rich vanilla scent.</p>
       </div>
       <div class="card">
-        <img src="images/Flux_Dev_Candle_Licking_Goode_sells_foodlike_bakery_candles_2.jpg" alt="Ice Cream Candle">
+        <img src="images/Flux_Dev_Candle_Licking_Goode_sells_foodlike_bakery_candles_2.jpg" alt="Ice Cream Candle" onerror="this.onerror=null; this.src='https://via.placeholder.com/300?text=Image+Missing';">
         <h3>Ice Cream Dream</h3>
         <p>Creamy and deliciously scented ice cream style candle.</p>
       </div>
       <div class="card">
-        <img src="images/Flux_Dev_Candle_Licking_Goode_sells_foodlike_bakery_candles_1.jpg" alt="Cookie Candle">
+        <img src="images/Flux_Dev_Candle_Licking_Goode_sells_foodlike_bakery_candles_1.jpg" alt="Cookie Candle" onerror="this.onerror=null; this.src='https://via.placeholder.com/300?text=Image+Missing';">
         <h3>Cookie Bliss</h3>
         <p>Freshly baked cookie aroma in a charming candle.</p>
       </div>
