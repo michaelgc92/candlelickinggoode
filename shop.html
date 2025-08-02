@@ -6,106 +6,31 @@
   <title>Shop | Candle Licking Goode</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #ffe4ec, #fff9f4);
-      color: #333;
-      display: flex;
-    }
-    nav {
-      background: rgba(255,255,255,0.7);
-      width: 250px;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
-    nav h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 26px;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-    nav a {
-      text-decoration: none;
-      color: #444;
-      font-weight: 500;
-      padding: 12px;
-      position: relative;
-      transition: color 0.3s;
-    }
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background: #ffb6c1;
-      transition: width 0.3s;
-    }
-    nav a:hover::after {
-      width: 100%;
-    }
-    .dropdown {
-      margin-top: 10px;
-    }
-    .dropdown-content {
-      display: none;
-      flex-direction: column;
-      margin-left: 15px;
-    }
-    .dropdown:hover .dropdown-content {
-      display: flex;
-    }
-    main {
-      margin-left: 250px;
-      flex: 1;
-      padding: 40px;
-    }
-    h2 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 42px;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .grid-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: rgba(255,255,255,0.7);
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .card img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      display: block;
-    }
-    .card button {
-      background: #ffb6c1;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .card button:hover {
-      background: #ff9aae;
-    }
+    body { margin: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(to bottom right, #ffe4ec, #fff9f4); color: #333; display: flex; }
+    nav { background: rgba(255,255,255,0.7); width: 250px; height: 100vh; position: fixed; top: 0; left: 0; display: flex; flex-direction: column; padding: 20px; box-shadow: 2px 0 10px rgba(0,0,0,0.1); z-index: 1000; }
+    nav h1 { font-family: 'Dancing Script', cursive; font-size: 26px; margin-bottom: 30px; text-align: center; }
+    nav a { text-decoration: none; color: #444; font-weight: 500; padding: 12px; position: relative; transition: color 0.3s; }
+    nav a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; background: #ffb6c1; transition: width 0.3s; }
+    nav a:hover::after { width: 100%; }
+    .dropdown { margin-top: 10px; }
+    .dropdown-content { display: none; flex-direction: column; margin-left: 15px; }
+    .dropdown:hover .dropdown-content { display: flex; }
+    main { margin-left: 250px; flex: 1; padding: 40px; }
+    h2 { font-family: 'Dancing Script', cursive; font-size: 42px; text-align: center; margin-bottom: 40px; }
+    .grid-section { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px; }
+    .card { background: rgba(255,255,255,0.7); border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
+    .card img { max-width: 100%; border-radius: 10px; margin-bottom: 15px; display: block; }
+    .card button { background: #ffb6c1; border: none; padding: 10px 20px; border-radius: 8px; color: white; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+    .card button:hover { background: #ff9aae; }
+    .filter-btn { display: block; margin: 0 auto 30px; background: #ffb6c1; border: none; padding: 12px 25px; border-radius: 8px; color: white; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+    .filter-btn:hover { background: #ff9aae; }
+    .filter-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; }
+    .filter-content { background: rgba(255,255,255,0.7); padding: 30px; border-radius: 12px; width: 400px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+    .filter-content h3 { font-family: 'Dancing Script', cursive; margin-top: 0; margin-bottom: 20px; text-align: center; }
+    .filter-option { display: flex; align-items: center; margin-bottom: 12px; }
+    .filter-option input { margin-right: 10px; }
+    .close-btn, .clear-btn { display: inline-block; margin: 20px 10px 0; background: #ffb6c1; border: none; padding: 10px 20px; border-radius: 8px; color: white; cursor: pointer; }
+    .clear-btn:hover, .close-btn:hover { background: #ff9aae; }
   </style>
 </head>
 <body>
@@ -128,17 +53,32 @@
 
   <main>
     <h2>Our Candles</h2>
+    <button class="filter-btn" onclick="document.getElementById('filterModal').style.display='flex'">Filter</button>
+
+    <div id="filterModal" class="filter-modal">
+      <div class="filter-content">
+        <h3>Filter Products</h3>
+        <div class="filter-option"><input type="checkbox" id="wickedFilter"><label for="wickedFilter">Wicked Candles</label></div>
+        <div class="filter-option"><input type="checkbox" id="winklesFilter"><label for="winklesFilter">Winkles Candles</label></div>
+        <div class="filter-option"><input type="checkbox" id="standaloneFilter"><label for="standaloneFilter">Standalone Candles</label></div>
+        <div class="filter-option"><input type="checkbox" id="waxmeltsFilter"><label for="waxmeltsFilter">Wax Melts</label></div>
+        <div class="filter-option"><input type="checkbox" id="diffusersFilter"><label for="diffusersFilter">Room Diffusers</label></div>
+        <button class="close-btn" onclick="applyFilters()">Apply</button>
+        <button class="clear-btn" onclick="clearFilters()">Clear Filters</button>
+      </div>
+    </div>
+
     <section class="grid-section" id="wicked">
-      <div class="card">
+      <div class="card category-wicked">
         <img src="Flux_Dev_Candle_Licking_Goode_sells_foodlike_bakery_candles_0.jpg" alt="Wicked Candle">
         <h3>Wicked Candle</h3>
         <p>Bold and fragrant, perfect for cozy nights.</p>
         <button>Add to Cart</button>
       </div>
     </section>
-    
+
     <section class="grid-section" id="winkles">
-      <div class="card">
+      <div class="card category-winkles">
         <img src="Flux_Dev_Candle_Licking_Goode_sells_foodlike_bakery_candles_2.jpg" alt="Winkles Candle">
         <h3>Winkles Candle</h3>
         <p>Playful and sweet, with unique bakery aromas.</p>
@@ -147,13 +87,55 @@
     </section>
 
     <section class="grid-section" id="standalone">
-      <div class="card">
+      <div class="card category-standalone">
         <img src="Flux_Dev_Candle_Licking_Goode_sells_foodlike_bakery_candles_1.jpg" alt="Standalone Candle">
         <h3>Standalone Candle</h3>
         <p>Classic design that lights up any room.</p>
         <button>Add to Cart</button>
       </div>
     </section>
+
+    <section class="grid-section" id="waxmelts">
+      <div class="card category-waxmelts">
+        <img src="Flux_Dev_Candle_Licking_Goode_sells_foodlike_bakery_candles_0.jpg" alt="Wax Melts">
+        <h3>Wax Melts</h3>
+        <p>Delicious scents in a compact, easy-to-use melt form.</p>
+        <button>Add to Cart</button>
+      </div>
+    </section>
+
+    <section class="grid-section" id="diffusers">
+      <div class="card category-diffusers">
+        <img src="Flux_Dev_Candle_Licking_Goode_sells_foodlike_bakery_candles_2.jpg" alt="Room Diffuser">
+        <h3>Room Diffuser</h3>
+        <p>Fill your space with continuous fragrance.</p>
+        <button>Add to Cart</button>
+      </div>
+    </section>
   </main>
+
+  <script>
+    function applyFilters() {
+      const categories = ['wicked', 'winkles', 'standalone', 'waxmelts', 'diffusers'];
+      categories.forEach(cat => {
+        const isChecked = document.getElementById(cat+'Filter').checked;
+        const items = document.querySelectorAll('.category-' + cat);
+        items.forEach(item => {
+          item.style.display = isChecked ? 'block' : 'none';
+        });
+      });
+      document.getElementById('filterModal').style.display='none';
+    }
+
+    function clearFilters() {
+      const categories = ['wicked', 'winkles', 'standalone', 'waxmelts', 'diffusers'];
+      categories.forEach(cat => {
+        document.getElementById(cat+'Filter').checked = false;
+        const items = document.querySelectorAll('.category-' + cat);
+        items.forEach(item => { item.style.display = 'block'; });
+      });
+      document.getElementById('filterModal').style.display='none';
+    }
+  </script>
 </body>
 </html>
